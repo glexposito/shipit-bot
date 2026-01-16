@@ -95,7 +95,7 @@ The project is configured to be built and run as a Docker container.
 2.  **Run the container:**
     This command securely passes your `.env` file to the container at runtime.
     ```bash
-    docker run --rm -it --env-file .env shipit-bot
+    docker run -d --name shipit-bot --env-file .env shipit-bot:latest
     ```
 
 ### Bot Commands
