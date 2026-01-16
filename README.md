@@ -105,6 +105,10 @@ The project is configured to be built and run as a Docker container.
     -   **Example**: `/release develop, a3f5c9e, release/2.211.0`
 -   **/ping**: A simple health-check command. The bot will reply with "Pong!".
 
+### Screenshot of the Shipit Bot in action
+<img width="788" height="849" alt="Screenshot from 2026-01-16 22-44-00" src="https://github.com/user-attachments/assets/3f46ddf7-027d-4774-b7ce-a37e90d8f892" />
+
+
 ## 📂 Project Structure
 
 ```
@@ -121,3 +125,4 @@ The project is configured to be built and run as a Docker container.
 ├── pyproject.toml      # Project definition and dependencies
 └── README.md           # This file
 ```
+
