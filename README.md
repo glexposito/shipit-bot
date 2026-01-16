@@ -106,7 +106,7 @@ The project is configured to be built and run as a Docker container.
 -   **/ping**: A simple health-check command. The bot will reply with "Pong!".
 
 ### Screenshot of the Shipit Bot in action
-<img width="788" height="849" alt="Screenshot from 2026-01-16 22-44-00" src="https://github.com/user-attachments/assets/3f46ddf7-027d-4774-b7ce-a37e90d8f892" />
+<img width="624" height="509" alt="image" src="https://github.com/user-attachments/assets/9b7e3028-5584-49c3-829c-d33131c1c6d0" />
 
 
 ## 📂 Project Structure
