@@ -12,7 +12,7 @@ A simple proof-of-concept Slack bot built with Python and `slack-bolt` to manage
 
 ## 🛠️ Tech Stack
 
--   **Language**: Python 3.13+
+-   **Language**: Python 3.13
 -   **Framework**: `slack-bolt`
 -   **Dependency Management**: `uv`
 -   **Dependency Injection**: `dependency-injector`
@@ -24,7 +24,7 @@ Follow these instructions to get the bot running on your local machine for devel
 
 ### Prerequisites
 
--   Python 3.13 or higher
+-   [Python](https://www.python.org/downloads/) 3.13
 -   [uv](https://github.com/astral-sh/uv) (Python package installer)
 -   [Docker](https://www.docker.com/get-started)
 
@@ -32,7 +32,7 @@ Follow these instructions to get the bot running on your local machine for devel
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repo-url>
+    git clone https://github.com/glexposito/shipit-bot.git
     cd shipit-bot
     ```
 
@@ -89,7 +89,7 @@ The project is configured to be built and run as a Docker container.
 
 1.  **Build the Docker image:**
     ```bash
-    docker build -t shipit-bot .
+    docker build -t shipit-bot:latest .
     ```
 
 2.  **Run the container:**
