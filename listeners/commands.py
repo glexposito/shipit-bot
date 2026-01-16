@@ -6,7 +6,7 @@ def register_commands(app):
     def handle_release(ack, body, say):
         ack()
         text = body.get("text", "")
-        user_name = body.get("user_name", "Someone")  # Get the user's name
+        user_id = body.get("user_id")
 
         args = [arg.strip() for arg in text.split(",")]
 
@@ -25,11 +25,11 @@ def register_commands(app):
         )
 
         confirmation_text = (
-            f"🚀 **New Release Initiated by @{user_name}!** 🚀\n\n"
+            f"🚀 *New Release Initiated by <@{user_id}>!* 🚀\n\n"
             f"You're about to start a new release process. Please double-check the details below:\n\n"
-            f"• **Source Branch:** `{source_branch}`\n"
-            f"• **From {ref_type.capitalize()}:** `{source_ref}`\n"
-            f"• **Target Branch:** `{target_branch}`\n\n"
+            f"• *Source Branch:* `{source_branch}`\n"
+            f"• *From {ref_type.capitalize()}:* `{source_ref}`\n"
+            f"• *Target Branch:* `{target_branch}`\n\n"
             f"Are you sure you want to proceed?"
         )
 
@@ -40,7 +40,6 @@ def register_commands(app):
                 "source_ref": source_ref,
                 "target_branch": target_branch,
                 "ref_type": ref_type,
-                "user_name": user_name,
             }
         )
 
@@ -74,5 +73,5 @@ def register_commands(app):
     @app.command("/ping")
     def handle_ping(ack, body, say):
         ack()
-        user_name = body.get("user_name", "Someone")  # Get the user's name
-        say(f"Pong @{user_name}! ✅")
+        user_id = body.get("user_id")
+        say(f"Pong <@{user_id}>! ✅")

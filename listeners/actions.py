@@ -17,19 +17,21 @@ def register_actions(app):
         dev_ops_service: DevOpsService = Provide[Container.dev_ops_service],
     ):
         ack()
-        user = body["user"]["name"]
+        user_id = body["user"]["id"]
 
         try:
-            # Update the original message to show it's in progress
+            # Update the original message to remove the buttons
             original_blocks = body["message"]["blocks"]
-            original_blocks[0]["text"]["text"] = (
-                f"🏃‍♂️ Okay @{user}, starting the release... please wait."
-            )
             original_blocks.pop(1)  # Remove the buttons
             client.chat_update(
                 channel=body["channel"]["id"],
                 ts=body["message"]["ts"],
                 blocks=original_blocks,
+            )
+
+            say(
+                thread_ts=body["message"]["ts"],
+                text=f"🏃‍♂️ Okay <@{user_id}>, starting the release... please wait.",
             )
 
             # Parse the data we stored in the button's value
@@ -61,13 +63,18 @@ def register_actions(app):
             )
 
     @app.action("release_cancel")
-    def handle_release_cancel(ack, body, client):
+    def handle_release_cancel(ack, body, client, say):
         ack()
-        user = body["user"]["name"]
+        user_id = body["user"]["id"]
 
-        # Update the original message to show it was cancelled
+        # Post the cancellation message in a thread
+        say(
+            thread_ts=body["message"]["ts"],
+            text=f"❌ Release cancelled by <@{user_id}>.",
+        )
+
+        # Update the original message to remove the buttons
         original_blocks = body["message"]["blocks"]
-        original_blocks[0]["text"]["text"] = f"❌ Release cancelled by @{user}."
         original_blocks.pop(1)  # Remove the buttons
         client.chat_update(
             channel=body["channel"]["id"],

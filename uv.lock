@@ -187,8 +187,8 @@ dependencies = [
 requires-dist = [
     { name = "azure-devops", specifier = ">=7.1.0b4" },
     { name = "dependency-injector", specifier = ">=4.41.0" },
-    { name = "python-dotenv", specifier = ">=1.0.0" },
-    { name = "slack-bolt", specifier = ">=1.18.0" },
+    { name = "python-dotenv", specifier = ">=1.0.1" },
+    { name = "slack-bolt", specifier = ">=1.19.0" },
 ]
 
 [[package]]
