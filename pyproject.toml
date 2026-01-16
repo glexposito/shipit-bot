@@ -1,0 +1,12 @@
+[project]
+name = "shipit-bot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "slack-bolt>=1.19.0",    # Official Slack Framework
+    "azure-devops>=7.1.0b4", # Azure DevOps Python SDK
+    "python-dotenv>=1.0.1",  # To load your tokens from a .env file
+    "dependency-injector>=4.41.0", # For dependency injection
+]

@@ -1,0 +1,27 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+pip-wheel-metadata/
+
+# Virtual environment
+.venv
+venv/
+
+# Secrets
+.env
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
