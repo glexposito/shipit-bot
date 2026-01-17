@@ -117,7 +117,7 @@ The project is configured to be built and run as a Docker container.
 │   ├── actions.py
 │   └── commands.py
 ├── services/           # Business logic (e.g., interacting with DevOps APIs)
-│   └── dev_ops_service.py
+│   └── release_service.py
 ├── .env                # Secret tokens and configuration (not committed)
 ├── app.py              # Main application entry point
 ├── containers.py       # Dependency injection container setup
@@ -125,4 +125,3 @@ The project is configured to be built and run as a Docker container.
 ├── pyproject.toml      # Project definition and dependencies
 └── README.md           # This file
 ```
-

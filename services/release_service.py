@@ -1,4 +1,4 @@
-class DevOpsService:
+class ReleaseService:
     def __init__(self):
         pass
 
@@ -9,7 +9,7 @@ class DevOpsService:
         Dummy method to create a branch.
         In a real application, this would contain your Azure DevOps logic.
         """
-        print("--- DevOpsService: create_branch called ---")
+        print("--- ReleaseService: create_branch called ---")
         print(f"  Source Branch: {source_branch}")
         print(f"  Source Ref (Commit/Tag): {source_ref}")
         print(f"  Target Branch: {target_branch}")

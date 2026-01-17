@@ -1,6 +1,6 @@
 from dependency_injector import containers, providers
 
-from services.dev_ops_service import DevOpsService
+from services.release_service import ReleaseService
 
 
 class Container(containers.DeclarativeContainer):
@@ -11,6 +11,6 @@ class Container(containers.DeclarativeContainer):
     # This allows you to inject configuration from files or environment variables.
     config = providers.Configuration()
 
-    # Define how to create the DevOpsService.
+    # Define how to create the ReleaseService.
     # It's a Singleton, so the same instance is used everywhere.
-    dev_ops_service = providers.Singleton(DevOpsService)
+    release_service = providers.Singleton(ReleaseService)

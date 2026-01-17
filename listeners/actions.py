@@ -3,7 +3,7 @@ import json
 from dependency_injector.wiring import Provide, inject
 
 from containers import Container
-from services.dev_ops_service import DevOpsService
+from services.release_service import ReleaseService
 
 
 def handle_release_proceed(ack, body, client, say):
@@ -19,7 +19,7 @@ def _handle_release_proceed(
     body,
     client,
     say,
-    dev_ops_service: DevOpsService = Provide[Container.dev_ops_service],
+    release_service: ReleaseService = Provide[Container.release_service],
 ):
     ack()
     user_id = body["user"]["id"]
@@ -46,7 +46,7 @@ def _handle_release_proceed(
         target_branch = action_value["target_branch"]
 
         # Call the service to perform the action
-        success = dev_ops_service.create_branch(
+        success = release_service.create_branch(
             source_branch, source_ref, target_branch
         )
 
